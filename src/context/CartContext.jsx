@@ -12,7 +12,6 @@ const CartContextComponent = ({ children }) => {
     const addProduct = {productId, productQuantity};
     const productsAOnCart = [...cart];
     const existingProduct = productsAOnCart.find((el)=>el.productId === addProduct.productId);
-    // console.log(productQuantity)
     if(existingProduct){
 
     (existingProduct.productQuantity + parseInt(productQuantity, 10)) >= parseInt(productStock, 10) ?
@@ -21,7 +20,6 @@ const CartContextComponent = ({ children }) => {
     }else{
       productsAOnCart.push(addProduct);
     }
-    console.log(productsAOnCart)
     setCart(productsAOnCart);
   }
 

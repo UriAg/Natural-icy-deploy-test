@@ -85,7 +85,6 @@ const Login = () => {
         })
         .catch((error) => console.log("Error:", error))
       } catch (validationError) {
-        console.log(JSON.stringify(validationError, null, 5))
         const newErrors = {};
         validationError.inner.forEach((error) => {
           newErrors[error.params.path] = error.message;

@@ -29,7 +29,6 @@ const ItemListContainer = () => {
   const [categoryRef, setCategoryRef] = useState(categoryName ? categoryName : 'todos')
   
   useEffect(()=>{
-    console.log(categoryRef)
     axios.get('https://naturalicy-back-production.up.railway.app/api/products/withStock')
     .then(res=>{
       setProductsRef(res.data.products);

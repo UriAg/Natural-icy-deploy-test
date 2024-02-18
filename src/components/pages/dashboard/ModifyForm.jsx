@@ -89,13 +89,11 @@ const ModifyForm = ({
           formData.append('thumbnail', image);
         }
         
-        console.log(productSelected)
         let url;
         productSelected
         ? url = `https://naturalicy-back-production.up.railway.app/api/products/${productSelected._id}`
         : url = `https://naturalicy-back-production.up.railway.app/api/products`;
 
-        console.log(url)
         let fetchOptions = {
           headers: {
             'Content-Type': 'multipart/form-data',
@@ -158,7 +156,6 @@ const ModifyForm = ({
                 theme: "light",
               });
             }
-            console.log(res)
           })
           .catch((error) => console.log("Error:", error))
 

@@ -37,7 +37,6 @@
 }
 
 .productContainer {
-    // width: -webkit-fill-available;
     img {
         width: 4.188rem;
         height: 4.25rem;
@@ -81,13 +80,11 @@
         margin-left: 0.156rem;
     }
     .quantitySubAdd {
-        // color: #9A9A9A;
         border: none;
         outline: none;
         width: 1.75rem;
         height: 2.25rem;
         text-align: center;
-        // line-height: 2.25rem;
         font-size: 1.3em;
         cursor: pointer;
     }

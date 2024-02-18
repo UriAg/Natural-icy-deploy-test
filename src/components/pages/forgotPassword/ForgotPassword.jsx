@@ -57,7 +57,6 @@ const ForgotPassword = () => {
         })
         .catch(error=>console.log(error))
       } catch (validationError) {
-        console.log(validationError)
         const newErrors = {};
         validationError.inner.forEach((error) => {
           newErrors[error.params.path] = error.message;

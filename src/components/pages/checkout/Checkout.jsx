@@ -97,7 +97,6 @@ const Checkout = () => {
     }
     
     if(isAddresFalse){
-      console.log('arch')
       axios.post(url, {orderData, phone}, fetchOptions)
       .then(res=>{
         if(res.data.code === 401){
