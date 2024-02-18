@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#root{
+    background-color: #ebebeb;
+}
+
+
+/* === Hover Navbar */
+
+.hoverVerdeClaro {
+    transition: all .2s ease;
+    display: inline-block;
+    font-weight: 700;
+}
+
+.hoverVerdeClaro:hover {
+    color: #41A88A;
+    font-weight: bold;
+    transform-origin: left;
+    transform: scale(1.2);
+}
+
+/* === Hover: Footer */
+
+.soporte {
+    .itemsContainer {
+        .itemBox {
+            padding: 1px;
+            .item:hover {
+                    color: #FFFF66;
+                    font-weight: 500;
+                }
+        }
+    }
+}
+
+.secciones {
+    .itemsContainer {
+        .itemBox {
+            padding: 1px;
+
+            .item:hover {
+                color: #FFFF66;
+                font-weight: 500;
+            }
+        }
+    }
+}

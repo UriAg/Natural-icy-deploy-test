@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.pie-pagina{
+    width: 100%;
+    background-color: #164439;
+    overflow: hidden;
+    height: 13rem;
+    position: relative;
+}
+
+.pie-pagina .box {
+    position: absolute;
+}
+
+.pie-pagina .grupo-1 {
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-top: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.pie-pagina .box figure {
+    display: flex;
+    opacity: 0.1;
+    position: relative;
+    z-index: 1;
+}
+
+.pie-pagina .box figure img {
+    width: 25%;
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: min-content;
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "logo secciones soporte redes"
+        "equipo equipo equipo equipo";
+}
+
+.logo {
+    grid-area: logo;
+}
+
+.secciones {
+    grid-area: secciones;
+}
+
+.soporte {
+    grid-area: soporte;
+}
+
+.redes {
+    grid-area: redes;
+}
+
+.equipo {
+    grid-area: equipo;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+@media screen and (max-width:800px){
+
+    .pie-pagina {
+        height: 15.5rem;
+    }
+    .container {
+            display: grid;
+            grid-auto-columns: 1fr;
+            grid-auto-rows: 1fr;
+            grid-template-columns: 25% 40% 35%;
+            grid-template-rows: min-content min-content;
+            gap: 0px 0px;
+            grid-template-areas:
+                "logo logo logo"
+                "secciones soporte redes"
+                "equipo equipo equipo";
+        }
+    
+        .redes {
+            grid-area: redes;
+        }
+    
+        .soporte {
+            grid-area: soporte;
+        }
+    
+        .secciones {
+            grid-area: secciones;
+        }
+
+        .equipo {
+            grid-area: equipo;
+            margin-top: 1.5rem;
+        }
+    
+        .logo {
+            grid-area: logo;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .pie-pagina .grupo-1 {
+            margin-left: 2rem;
+            margin-right: 2rem;
+        }
+}
+
+@media screen and (max-width:480px) {
+
+    .pie-pagina {
+            height: 17rem;
+        }
+
+    .container {
+            display: grid;
+            grid-template-columns: 60% 40%;
+            grid-template-rows: min-content min-content;
+            grid-auto-columns: 1fr;
+            grid-auto-rows: 1fr;
+            gap: 4px 0px;
+            grid-auto-flow: row;
+            grid-template-areas:
+                "logo redes"
+                "soporte secciones"
+                "equipo equipo";
+        }
+    
+        .soporte {
+            grid-area: soporte;
+        }
+    
+        .secciones {
+            grid-area: secciones;
+        }
+    
+        .redes {
+            grid-area: redes;
+        }
+    
+        .logo {
+            grid-area: logo;
+            align-items: baseline;
+        }
+
+        .equipo {
+            grid-area: equipo;
+        }
+}

@@ -1,0 +1,241 @@
+html{
+    scroll-behavior: smooth;
+}
+
+.global-container{
+    width: 100%;
+    .globalItemDetailContainer {
+        width: 100%;
+        padding: 0 3em;
+        display: flex;
+        justify-content: center;
+        background: #164439;
+        padding: 5em;
+        align-items: center;
+    
+        .imgContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            border-radius: 0 12.5em;
+            max-width: 37.4em;
+            width: 80%;
+            height: 29.1em;
+            margin-right: 1.5em;
+            user-select: none;
+            .heart-icon{
+                position: absolute;
+                top: 1em;
+                left: 1em;
+                fill: #164439;
+                width: 4em;
+                height: 4em;
+                cursor: pointer;
+                filter: drop-shadow(0 0 .125em #FFF);
+                transition: all .2s ease;
+            }
+
+            .MuiCardMedia-root {
+                border-radius: 0 12.5em;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .item-container{
+            width: 30%;
+            .itemDetail {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 1.5em;
+                width: 100%;
+                
+                .label-container{
+                    display: flex;
+                    gap: 0.3em; 
+                }
+
+                .titleDetail{
+                    width: 100%;
+                    margin-bottom: 1em;
+                    // white-space: nowrap;
+                    overflow-x: clip;
+                    text-overflow: ellipsis;
+                }
+                .descriptionDetail {
+                    display: block;
+                    width: 100%;
+                    margin-bottom: 1.5em;
+                }
+            }
+            .stockCounterButtonContainer{
+                display: flex;
+                flex-direction: row; 
+                .counter-container{
+            
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+            
+                    .stockItemDetail {
+                        display: flex;
+                        justify-content: center;
+                        width: 7.5em;
+                        border-radius: .2em;
+                        background-color: #FFFF66;
+                    }
+            
+                    .counterItemDetail {
+                        display: flex;
+                        justify-content: space-between;
+                        width: 7.5em;
+                        height: 2.25em;
+                        background-color: #e7e7e7;
+                        align-items: center;
+                        margin-top: 0.4em;
+                        border-radius: .2em;
+                    }
+            
+                    .subRemoveOne {
+                        background-color: #e7e7e7;
+                        border: none;
+                        outline: none;
+                        cursor: pointer;
+                        font-size: 1.4em;
+                        width: 1.2em;
+                        height: 100%;
+                        text-align: center;
+                        border-radius: .2em 50% 50% .2em;
+                        transition: all .2s ease;
+                        &:hover{
+                            background-color: #1644394c;
+                        }
+                        &:disabled:hover{
+                            background-color: rgba(255, 0, 0, 0.193);
+                        }
+                    }
+
+                    .subAddOne {
+                        background-color: #e7e7e7;
+                        border: none;
+                        outline: none;
+                        cursor: pointer;
+                        font-size: 1.4em;
+                        width: 1.2em;
+                        height: 100%;
+                        text-align: center;
+                        border-radius: 50% .2em .2em 50%;
+                        transition: all .2s ease;
+                        &:hover{
+                            background-color: #1644394c;
+                        }
+                        &:disabled:hover{
+                            background-color: rgba(255, 0, 0, 0.193);
+                        }
+                    }
+                }
+            
+            }
+        }
+    }
+    .serviceContainer {
+        width: 100%;
+        height: 15em;
+        background: #F8F8F8;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+        .service {
+            width: calc(100%/3);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            & svg {
+                color: #164439;
+                width: 5em;
+                height: 5em;
+            }
+
+            &:nth-of-type(2){
+                border-left: .063em solid #00000042;
+                border-right: .063em solid #00000042;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 950px) {
+    .global-container{
+        .globalItemDetailContainer {
+            padding: 2em 1em;
+            flex-direction: column;
+            .imgContainer {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 2em;
+            }
+            .item-container{
+                width: 80%;
+                .itemDetail {
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                    width: 100%;
+                    margin-bottom: 1.25em;
+                    
+                    .titleDetail {
+                        margin-bottom: .625em;
+                    }
+                
+                    .descriptionDetail {
+                        margin-bottom: .31em;
+                    }
+                }
+                .stockCounterButtonContainer {
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+
+
+}
+
+@media screen and (max-width: 600px) {
+    .global-container{
+        .globalItemDetailContainer{
+            .imgContainer{
+                height: 20.1em;
+                .MuiCardMedia-root{
+                    border-radius: 0 5em;
+                }
+            }
+        }
+        .serviceContainer {
+            padding: 2em 0;
+            height: auto;
+            flex-direction: column;
+
+            .service:nth-of-type(1){
+                padding-bottom: 1em;
+            }
+
+            .service:nth-of-type(3){
+                padding-top: 1em;
+            }
+        
+            .service:nth-of-type(2){
+                padding: 1em 0;
+                border-left: none;
+                border-right: none;
+                border-top: .063em solid #00000042;
+                border-bottom: .063em solid #00000042;
+            }
+        }
+    }
+}

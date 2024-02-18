@@ -1,0 +1,165 @@
+.contactDetail {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .contactContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2rem;
+
+        .contactImg {
+            width: 9.625rem;
+            height: 1.625rem;
+        }
+
+        .contactBox {
+            display: flex;
+            flex-direction: column;
+            justify-content: right;
+            align-items: baseline;
+            margin-top: 3rem;
+            width: 30rem;
+
+            .infoBox {
+                width: 100%;
+
+                .textContainer {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+        }
+
+        .contactStatus {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-content: center;
+            align-items: center;
+            margin-top: 2.5rem;
+            width: 30rem;
+
+            .contactLine {
+                width: 10%;
+                height: 0.063rem;
+                margin-left: 0.313rem;
+                margin-right: 0.313rem;
+            }
+        }
+
+
+        .optionsContainer {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 1.25rem;
+            width: 80%;
+            margin-bottom: 4.375rem;
+            .linksOptions {
+                text-decoration: none;
+                & span{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                & svg {
+                    width: 0.875rem;
+                    height: 0.875rem;
+                }
+            }
+            .linksOptions-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                & svg {
+                    width: 0.875rem;
+                    height: 0.875rem;
+                }
+            }
+        }
+    }
+
+
+
+
+}
+
+
+@media screen and (max-width: 600px) {
+
+    .contactDetail {
+
+        .contactContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 25rem;
+
+            .subtitulo {
+                margin-left: 2rem;
+                margin-right: 2rem;
+            }
+
+            .contactStatus {
+                justify-content: center;
+                width: 25rem;
+            }
+
+            .contactBox {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 25rem;
+
+                .infoBox {
+                    justify-content: center;
+                    align-items: center;
+                    align-content: center;
+                }
+
+                .controlersBox {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-bottom: 1rem;
+                }
+            }
+
+            .optionsContainer {
+                width: 25rem;
+            }
+
+
+        }
+    }
+}
+
+
+@media screen and (max-width: 400px) {
+
+    .contactDetail {
+
+        .contactContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .contactStatus {
+                width: 18rem;
+                display: flex;
+            }
+
+
+        }
+
+        .optionsContainer {
+            width: 18rem;
+        }
+
+
+    }
+}

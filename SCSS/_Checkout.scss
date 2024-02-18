@@ -1,0 +1,151 @@
+.checkoutContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    .checkoutBox {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .principalCheckout {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .infoCheckoutContainer {
+        display: flex;
+        flex-direction: row;
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+
+            .infoCheckout {
+                background-color: #ffff;
+                display: flex;
+                flex-direction: column;
+                margin-right: 2rem;
+
+                .detailInfoCheckout {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    width: 20rem;
+                    // margin-top: 0.7rem;
+                    // margin-left: 0.5rem;
+                    margin: .5em;
+                }
+            }
+
+        }
+    }
+    
+}
+
+.cartStatusCheckout {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    margin-top: 2.5rem;                                                
+        
+    .cartLine {
+        width: 10%;
+        height: 0.063rem;
+        margin-left: 0.313rem;
+        margin-right: 0.313rem;
+        }
+}
+
+.css-hfbky5-MuiTypography-root {
+    margin: 0;
+    color: #164439;
+    font-weight: 500;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 1rem;
+}
+
+
+@media screen and (max-width: 800px) {
+
+    .checkoutContainer {
+        .checkoutBox {
+            .infoCheckoutContainer {
+                .infoCheckout {
+                    margin-right: 1rem;
+                    .detailInfoCheckout {
+                        width: 16rem;
+                    }
+                }
+                
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .checkoutContainer {
+        .checkoutBox {
+            .infoCheckoutContainer {
+                .infoCheckout {
+                    margin-right: 1rem;
+                    .detailInfoCheckout {
+                        width: 16rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .checkoutContainer {
+        .checkoutBox {
+            .infoCheckoutContainer {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                .infoCheckout { 
+                    width: 25rem;
+                    height: auto;
+                    margin-bottom: 1rem;
+                    margin-right: 0rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .checkoutContainer {
+        .checkoutBox {
+            .cartStatusCheckout {
+                width: 20rem;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 450px) {
+    .checkoutContainer {
+        .checkoutBox {          
+            .infoCheckoutContainer {
+                .infoCheckout {
+                    width: 20rem;
+                }
+            }
+        }
+    }
+}
+
+

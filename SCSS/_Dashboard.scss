@@ -1,0 +1,43 @@
+.product_list-global-container{
+    .add-search-container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+        padding: .5em 0;
+        position: relative;
+        .back-button{
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            margin: .5em 0 .5em .5em;
+            width: 4em;
+            border: none;
+            cursor: pointer;
+            &::before{
+                content: '<';
+                color: #1976D2;
+                font-size: 3em;
+                font-weight: 100;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .product_list-global-container{
+        .add-search-container{
+            flex-direction: column;
+            align-items: center;
+            .MuiButtonBase-root,
+            .MuiTextField-root{
+                width: 60%!important;
+            }
+        }
+    }
+}

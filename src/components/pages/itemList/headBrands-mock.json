@@ -1,0 +1,20 @@
+[
+    {
+        "title":"¡Nuestros productos estrellas!",
+        "middleText":"Estos son los productos que nuestros clientes adoran.",
+        "boldEndText":"¿Cuál será tu próximo favorito?",
+        "img":"productosEstrellas.png"
+    },
+    {
+        "title":"¡Envíos express!",
+        "middleText":"Hacemos que comer saludable sea aún más fácil.",
+        "boldEndText":"Compra ahora y disfruta del envío gratis en productos seleccionados.",
+        "img":"enviosExpress.jpg"
+    },
+    {
+        "title":"Atención personalizada",
+        "middleText":"Una buena experiencia de compra es nuestra prioridad en cada paso",
+        "boldEndText":"Comprometidos a superar tus expectativas.",
+        "img":"atencionPersonalizada.jpg"
+    }
+]
