@@ -2,7 +2,6 @@ import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../../context/CartContext";
 import { Link, useNavigate } from "react-router-dom";
 import { Table, TableBody, TableCell, TableHead, TableRow, Typography } from "@mui/material";
-import lineCart from "../../../assets/lineCart.png"
 import { Icon } from '@iconify/react';
 import TableContainer from '@mui/material/TableContainer';
 import Paper from '@mui/material/Paper';
