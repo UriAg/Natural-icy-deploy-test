@@ -4,7 +4,6 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import natural from "../../../assets/natural.png"
 import theme from "../../../temaConfig";
 import { ThemeProvider } from "@emotion/react";
 import { useFormik } from 'formik';
@@ -103,7 +102,7 @@ const Register = () => {
       <div className="box">
         <ThemeProvider theme={theme}>
           <ToastContainer />
-          <img src={natural} alt="Nombre del emprendimiento: Natural" />
+          <img src={`${import.meta.env.VITE_BASE_URL}/assets/natural.png`} alt="Nombre del emprendimiento: Natural" />
           <Typography variant="h2" className="subtitulo">Compra más rápido y lleva el control de tus pedidos, ¡en un solo lugar!</Typography>
           <form onSubmit={handleSubmit}>
             <div>

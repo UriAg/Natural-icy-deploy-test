@@ -10,12 +10,10 @@ import "./Navbar.css";
 import { useContext, useState } from "react";
 import { menuItemsAdmin } from "../../../router/navigationAdmin";
 import { AuthContext } from "../../../context/AuthContext";
-import eneBlanco from "../../../assets/eneBlanco.png"
 import theme from "../../../temaConfig";
 import { ThemeProvider } from "@emotion/react";
 import { Typography } from "@mui/material";
 import { Icon } from '@iconify/react';
-import naturalBlanco from "../../../assets/naturalBlanco.png"
 import NavListResponsive from "./NavListResponsive";
 import NavList from "./NavList";
 
@@ -34,7 +32,7 @@ function Navbar() {
           <Box sx={{ display: { xs: 'none', sm: 'block', } }}>
             <Toolbar sx={{ display: "flex", flexDirection: "row", justifyContent: "space-between", alignItems: "center", height: "5.125rem" }}>
               <div style={{ display: "flex", alignItems: "center", marginRight: "2.5rem" }}>
-                <Link to="/"><img src={eneBlanco} style={{ width: "2.5rem", height: "2.5rem", alignItems: "center" }} alt="N" /></Link>
+                <Link to="/"><img src={`${import.meta.env.VITE_BASE_URL}/assets/eneBlanco.png`} style={{ width: "2.5rem", height: "2.5rem", alignItems: "center" }} alt="N" /></Link>
               </div>
               <div style={{ display: "flex", alignItems: "center", flexGrow: 1 }}>
                 {menuItemsAdmin.map(({ id, path, title }) => (
@@ -92,7 +90,7 @@ function Navbar() {
             <MenuIcon color="secondary.primary" />
           </IconButton>
 
-          <Link to="/"><img src={naturalBlanco} style={{ width: "10em", alignItems: "center" }} alt="Natural" /></Link>
+          <Link to="/"><img src={`${import.meta.env.VITE_BASE_URL}/assets/naturalBlanco.png`} style={{ width: "10em", alignItems: "center" }} alt="Natural" /></Link>
 
           <Link component={Link} style={{display:'flex'}} to={"/cart"}>
             <Icon icon="fontisto:shopping-basket" width="24" height="24" color="#FFFFFF" />

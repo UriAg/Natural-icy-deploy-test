@@ -5,7 +5,6 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios'
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import natural from "../../../assets/natural.png"
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
@@ -72,7 +71,7 @@ const ForgotPassword = () => {
       <ThemeProvider theme={theme}>
         <ToastContainer />
         <div className="box">
-          <img src={natural} alt="Nombre del emprendimiento: Natural" />
+          <img src={`${import.meta.env.VITE_BASE_URL}/assets/natural.png`} alt="Nombre del emprendimiento: Natural" />
           <Typography variant="h2" className="subtitulo">¿Olvidaste tu contraseña?</Typography>
           <form onSubmit={handleSubmit}>
             <div>

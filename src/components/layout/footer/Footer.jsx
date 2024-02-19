@@ -1,6 +1,4 @@
 import "../footer/Footer.css"
-import eneBlanco from "../../../assets/eneBlanco.png"
-import naturalBlanco from "../../../assets/naturalBlanco.png"
 import theme from "../../../temaConfig";
 import { FaInstagram, FaTwitter, FaFacebookSquare } from "react-icons/fa";
 import { ThemeProvider } from "@emotion/react";
@@ -15,12 +13,12 @@ const Footer = () => {
         <footer className="pie-pagina">
                 <div className="box">
                     <figure>
-                            <img src={eneBlanco} style={{ transform: 'rotate(-30deg)', flexShrink: 0, }} alt="Descripción de la imagen" />
+                            <img src={`${import.meta.env.VITE_BASE_URL}/assets/eneBlanco.png`} style={{ transform: 'rotate(-30deg)', flexShrink: 0, }} alt="Descripción de la imagen" />
                     </figure>
                 </div>
             <div className="grupo-1 container">
                 <div className="logo">
-                        <img src={naturalBlanco} style={{ width: '9rem', height: '1.5rem', flexShrink: 0 }} alt="Descripción de la imagen" />
+                        <img src={`${import.meta.env.VITE_BASE_URL}/assets/naturalBlanco.png`} style={{ width: '9rem', height: '1.5rem', flexShrink: 0 }} alt="Descripción de la imagen" />
                     <Typography variant="h6">Comida saludable congelada</Typography>
                 </div>
                 <div className="secciones">

@@ -7,9 +7,7 @@ import { AuthContext } from "../../../context/AuthContext";
 import { Link, useLocation } from "react-router-dom";
 import theme from "../../../temaConfig";
 import { toast, ToastContainer } from "react-toastify";
-import { ThemeProvider } from "@emotion/react";
-import natural from "../../../assets/natural.png"
-import lineCart from "../../../assets/lineCart.png"
+import { ThemeProvider } from "@emotion/react"
 import CartCheckout from "./CartCheckout";
 
 
@@ -146,14 +144,14 @@ const Checkout = () => {
             <ToastContainer />
             <div className="checkoutBox">
               <div className="principalCheckout">
-                <img src={natural} alt="Nombre del emprendimiento: Natural" style={{marginBottom:'.5em'}} className="checkoutImg" />
+                <img src={`${import.meta.env.VITE_BASE_URL}/assets/natural.png`} alt="Nombre del emprendimiento: Natural" style={{marginBottom:'.5em'}} className="checkoutImg" />
                 <Typography variant="h2">Compra más rápido y lleva el control de tus pedidos, ¡en un solo lugar!</Typography>
               </div>
               <div className="cartStatusCheckout">
                 <Typography variant="h4" style={{ color: "#164439", alignItems:"center" }}>Productos</Typography>
-                <img src={lineCart} className="cartLine" alt="Linea recta" />
+                <img src={`${import.meta.env.VITE_BASE_URL}/assets/lineCart.png`} className="cartLine" alt="Linea recta" />
                 <Typography variant="h4" style={{ color: "#164439" }} >Detalle de entrega</Typography>
-                <img src={lineCart} className="cartLine" alt="Linea recta" />
+                <img src={`${import.meta.env.VITE_BASE_URL}/assets/lineCart.png`} className="cartLine" alt="Linea recta" />
                 <Typography variant="titulo" sx={{ fontSize: "0.875rem" }} >Medios de pago</Typography>
               </div>
               <div className="infoCheckoutContainer">

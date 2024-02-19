@@ -3,8 +3,6 @@ import { FormControlLabel, Radio, RadioGroup, TextField, Typography } from "@mui
 import { Link, useNavigate } from "react-router-dom";
 import theme from "../../../temaConfig";
 import { ThemeProvider } from "@emotion/react";
-import natural from "../../../assets/natural.png"
-import lineCart from "../../../assets/lineCart.png"
 import { Icon } from '@iconify/react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
@@ -103,13 +101,13 @@ const ContactDetail = () => {
             <ThemeProvider theme={theme}>
                 <ToastContainer/>
                 <div className="contactContainer">
-                    <img src={natural} alt="Nombre del emprendimiento: Natural" className="contactImg" style={{marginBottom:'.5em'}}/>
+                    <img src={`${import.meta.env.VITE_BASE_URL}/assets/natural.png`} alt="Nombre del emprendimiento: Natural" className="contactImg" style={{marginBottom:'.5em'}}/>
                     <Typography className="subtitulo" variant="h2">Compra más rápido y lleva el control de tus pedidos, ¡en un solo lugar!</Typography>
                     <div className="contactStatus">
                         <Typography variant="h4" style={{ color: "#164439" }} className="titleContactStatus">Productos</Typography>
-                        <img src={lineCart} className="contactLine" alt="Linea recta" />
+                        <img src={`${import.meta.env.VITE_BASE_URL}/assets/lineCart.png`} className="contactLine" alt="Linea recta" />
                         <Typography variant="titulo" sx={{ fontSize: "0.875rem" }} className="titleContactStatus" >Detalle de entrega</Typography>
-                        <img src={lineCart} className="contactLine" alt="Linea recta" />
+                        <img src={`${import.meta.env.VITE_BASE_URL}/assets/lineCart.png`} className="contactLine" alt="Linea recta" />
                         <Typography variant="h4" style={{ color: "#164439" }} className="titleContactStatus">Medios de pago</Typography>
                     </div>
                     <div className="contactBox">
