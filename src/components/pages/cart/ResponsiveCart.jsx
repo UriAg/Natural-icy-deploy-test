@@ -9,7 +9,6 @@ import {
     TableRow,
     Typography,
 } from "@mui/material";
-import lineCart from "../../../assets/lineCart.png";
 import { Icon } from '@iconify/react';
 import theme from "../../../temaConfig";
 import TableContainer from '@mui/material/TableContainer';
