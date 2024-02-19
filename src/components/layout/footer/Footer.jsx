@@ -26,13 +26,13 @@ const Footer = () => {
                 <div className="secciones">
                     <Typography variant="h4">Secciones</Typography>
                     <List className="itemsContainer">
-                        <ListItem className="itemBox">
+                        {/* <ListItem className="itemBox">
                             <Link component={Link} to={"/"}>
                                 <Typography variant="h5" className="item">Home</Typography>
                             </Link>
-                        </ListItem>
+                        </ListItem> */}
                         <ListItem className="itemBox">
-                            <Link component={Link} to={"/shop"}>
+                            <Link component={Link} to={"/"}>
                                 <Typography variant="h5" className="item">Productos</Typography>
                             </Link>
                         </ListItem>

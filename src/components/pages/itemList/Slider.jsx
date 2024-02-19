@@ -93,7 +93,7 @@ const Slider = ({ space, uniqueSlide, navigationActive, paginationActive, catego
                             <Typography variant="carrusel">{middleText}</Typography>
                             <Typography variant="carrusel" sx={{ fontWeight: "600" }}>{boldEndText}</Typography>
                         </div>
-                        <img src={`${import.meta.env.BASE_URL}src/assets/${img}`} alt="Brand image" />
+                        <img src={`${import.meta.env.VITE_BASE_URL}src/assets/${img}`} alt="Brand image" />
                     </div>
                     </SwiperSlide>
                 ))

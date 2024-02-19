@@ -194,7 +194,7 @@ const Login = () => {
                       ¿Olvidaste tu contraseña?
                     </Typography>
                     </Link>
-                    <Link to="/shop" style={{ textAlign:'center'}}>
+                    <Link to="/" style={{ textAlign:'center'}}>
                       <Typography variant="h5" sx={{
                         textTransform: "none",
                         cursor: "pointer",

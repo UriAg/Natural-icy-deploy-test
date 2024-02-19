@@ -183,7 +183,7 @@ const Cart = () => {
             </TableContainer>
             <div className="optionsContainer">
               {cart.length > 0 && (
-                <Link to="/shop" className="linksOptions">
+                <Link to="/" className="linksOptions">
                   <Typography variant="stock" style={{ color: '#164439' }}><Icon icon="grommet-icons:next" transform="rotate(180)" />Seguir comprando</Typography>
                 </Link>
               )}

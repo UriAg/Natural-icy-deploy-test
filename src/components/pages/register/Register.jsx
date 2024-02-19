@@ -218,7 +218,7 @@ const Register = () => {
                   <Box m={0.1} />
                   <Typography variant="h5" onClick={() => navigate("/login")} sx={{ textTransform: "none", cursor: "pointer", color: "#164439", fontWeight: "500" }}>Iniciá sesión</Typography>
                 </div>
-                <Link to="/shop" style={{ textAlign:'center'}}>
+                <Link to="/" style={{ textAlign:'center'}}>
                   <Typography variant="h5" sx={{
                       textTransform: "none",
                       cursor: "pointer",
