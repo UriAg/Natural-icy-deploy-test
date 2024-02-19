@@ -1,10 +1,33 @@
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, useNavigate } from "react-router-dom";
 import AppRouter from "./router/AppRouter";
 import CartContextComponent from "./context/CartContext";
 import FavoritesContextComponent from "./context/FavoritesContext";
 import AuthContextComponent from "./context/AuthContext";
+import { useEffect } from "react";
 
 function App() {
+
+  const navigate = useNavigate()
+
+  function validateTokenDate() {
+      let userTokenAccess = localStorage.getItem('userTokenAccess');
+      if (userTokenAccess) {
+          const expirationLoginDate = localStorage.getItem('expirationLoginDate');
+          if (expirationLoginDate) {
+              const now = new Date().getTime();
+              if (now > parseInt(expirationLoginDate)) {
+                localStorage.removeItem('userTokenAccess');
+                localStorage.removeItem('expirationLoginDate');
+                navigate('/')
+              }
+          }
+      }
+  }
+
+  useEffect(()=>{
+    validateTokenDate()
+  }, [])
+  
   return (
     <BrowserRouter>
       <CartContextComponent>

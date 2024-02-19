@@ -43,12 +43,12 @@ const Login = () => {
 
         let fetchOptions = {
           headers: {
-              'Content-Type': 'application/json',
+            'Content-Type': 'application/json',
           },
         };
 
         if (userTokenAccess) {
-            fetchOptions.headers['Authorization'] = `Bearer ${userTokenAccess}`;
+          fetchOptions.headers['Authorization'] = `Bearer ${userTokenAccess}`;
         }
 
         axios.post(url, data, fetchOptions)
