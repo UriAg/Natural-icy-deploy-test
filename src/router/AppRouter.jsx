@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 import { routes } from "./routes";
 import Login from "../components/pages/login/Login";
 import Register from "../components/pages/register/Register";
@@ -38,9 +38,26 @@ const AppRouter = () => {
       <Route path="/changePassword" element={<ChangePassword />} />
 
       {/* Nota: Asegúrate de agregar el componente Footer dentro del Route */}
-      <Route path="*" element={<h1>404 - Not found</h1>} />
+      
+      <Route path="*" element={<div style={{
+          backgroundColor:'#abb9b2',
+          width:'100%',
+          height:'100vh',
+          display:'flex',
+          alignItems:'center',
+          justifyContent:'center',
+          flexDirection:'column',
+          color:'#349377',
+          filter:'invert(1)'
+        }}>
+        <h1>404 - Not found</h1>
+        <Link to='/' style={{fontSize:'1em', fontFamily:'sans-serif'}}>
+          Regresar al sitio
+        </Link>
+        </div>}
+      />
+
     </Routes>
   );
 };
-
 export default AppRouter;

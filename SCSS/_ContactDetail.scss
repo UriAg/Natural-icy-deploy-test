@@ -130,10 +130,8 @@
             }
 
             .optionsContainer {
-                width: 25rem;
+                width: 100%;
             }
-
-
         }
     }
 }
@@ -147,19 +145,24 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            width: 100%;
 
             .contactStatus {
                 width: 18rem;
                 display: flex;
             }
 
+            .contactBox {
+                width: 100%;
 
+                .infoBox {
+                    width: 85%;
+                }
+            }
         }
 
         .optionsContainer {
-            width: 18rem;
+            width: 100%;
         }
-
-
     }
 }

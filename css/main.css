@@ -24,6 +24,34 @@
   transform: scale(1.2);
 }
 
+.hoverVerdeClaro-desktop {
+  transition: all 0.2s ease;
+  display: inline-block;
+  font-weight: 700;
+}
+
+.hoverVerdeClaro-desktop:hover {
+  color: #41A88A !important;
+  font-weight: bold;
+  transform: scale(1.1);
+}
+
+.boxContainer .box .box-container .textContainerRow-container .textContainerRow,
+.textContainerRow-container .textContainerRow {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.625rem;
+  justify-content: center;
+}
+.boxContainer .box .box-container .textContainerRow-container .textContainerRow .redirect-link:hover,
+.textContainerRow-container .textContainerRow .redirect-link:hover {
+  color: #357d6c;
+}
+.boxContainer .box .box-container .textContainerRow-container .redirect-link:hover,
+.textContainerRow-container .redirect-link:hover {
+  color: #357d6c;
+}
+
 /* === Hover: Footer */
 .soporte .itemsContainer .itemBox {
   padding: 1px;
@@ -96,12 +124,6 @@
 .boxContainer .box .button:hover .MuiTypography-root {
   color: #41a88a;
   text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.25);
-}
-.boxContainer .box .textContainerRow {
-  display: flex;
-  flex-direction: row;
-  margin-top: 0.625rem;
-  justify-content: center;
 }
 
 @media screen and (max-width: 660px) {
@@ -569,6 +591,7 @@ html {
 
 .cart {
   width: 100%;
+  min-height: 70vh;
   margin-top: 5rem;
   display: flex;
   justify-content: center;
@@ -1082,7 +1105,7 @@ html {
     margin-bottom: 1rem;
   }
   .contactDetail .contactContainer .optionsContainer {
-    width: 25rem;
+    width: 100%;
   }
 }
 @media screen and (max-width: 400px) {
@@ -1090,13 +1113,20 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
   }
   .contactDetail .contactContainer .contactStatus {
     width: 18rem;
     display: flex;
   }
+  .contactDetail .contactContainer .contactBox {
+    width: 100%;
+  }
+  .contactDetail .contactContainer .contactBox .infoBox {
+    width: 85%;
+  }
   .contactDetail .optionsContainer {
-    width: 18rem;
+    width: 100%;
   }
 }
 /* === Estilos: CartCheckout*/

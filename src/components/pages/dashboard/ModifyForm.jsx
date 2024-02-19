@@ -88,7 +88,6 @@ const ModifyForm = ({
         for (const image of thumbnail) {
           formData.append('thumbnail', image);
         }
-        
         let url;
         productSelected
         ? url = `https://naturalicy-back-production.up.railway.app/api/products/${productSelected._id}`

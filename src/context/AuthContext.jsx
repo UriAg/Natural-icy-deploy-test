@@ -19,11 +19,11 @@ const AuthContextComponent = ({ children }) => {
   };
 
   const logoutContext = () => {
-    setUser({});
-    setIsLogged(false);
     localStorage.removeItem("userInfo");
     localStorage.removeItem("isLogged");
     localStorage.removeItem("userTokenAccess");
+    setUser({});
+    setIsLogged(false);
   };
 
   let data = {

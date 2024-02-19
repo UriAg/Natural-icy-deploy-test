@@ -5,12 +5,11 @@
     width: 100%;
     background-color: #e7e7e7;
     .box {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
         .img {
             width: 9.625rem;
@@ -62,13 +61,7 @@
             }
         }
 
-        .textContainerRow {
-            display: flex;
-            flex-direction: row;
-            margin-top: 0.625rem;
-            justify-content: center;
-
-        }
+        
     }
 }
 

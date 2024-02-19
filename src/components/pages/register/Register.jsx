@@ -52,7 +52,7 @@ const Register = () => {
         const userData = {
           name: result.name,
           last_name: result.last_name,
-          email: result.email,
+          email: result.email.toLowerCase(),
           role: 'USER',
           password: result.password,
           repeatedPassword: result.password
@@ -206,7 +206,7 @@ const Register = () => {
                   />
                 </FormControl>
               </div>
-              <div>
+              <div className='textContainerRow-container'>
                 <div>
                   <Button variant="contained" type="submit" className="button">
                     <Typography variant="h4">Crear cuenta</Typography>
@@ -215,14 +215,13 @@ const Register = () => {
                 <div className="textContainerRow">
                   <Typography variant="h5" align="center" sx={{ color: "#164439" }}>¿Ya tenés una cuenta?</Typography>
                   <Box m={0.1} />
-                  <Typography variant="h5" onClick={() => navigate("/login")} sx={{ textTransform: "none", cursor: "pointer", color: "#164439", fontWeight: "500" }}>Iniciá sesión</Typography>
+                  <Typography variant="h5" className="redirect-link" onClick={() => navigate("/login")} sx={{ textTransform: "none", cursor: "pointer", color: "#164439", fontWeight: "500" }}>Iniciá sesión</Typography>
                 </div>
-                <Link to="/" style={{ textAlign:'center'}}>
-                  <Typography variant="h5" sx={{
+                <Link to="/" className="textContainerRow">
+                  <Typography variant="h5" className="redirect-link" sx={{
                       textTransform: "none",
                       cursor: "pointer",
                       color: "#164439",
-                      marginTop:'.7em',
                       fontWeight: "500",
                     }}
                   >

@@ -37,26 +37,26 @@ function Navbar() {
               <div style={{ display: "flex", alignItems: "center", flexGrow: 1 }}>
                 {menuItemsAdmin.map(({ id, path, title }) => (
                   <Link component={Link} key={id} to={path}>
-                    <Typography variant="h4" sx={{ fontSize: "1rem", marginRight: "1.5rem" }}>{title}</Typography>
+                    <Typography variant="h4" className="hoverVerdeClaro-desktop" sx={{ fontSize: "1rem", marginRight: "1.5rem" }}>{title}</Typography>
                   </Link>
                 ))}
               </div>
               <div style={{ display: "flex", alignItems: "center" }}>
                 <div style={{}}>
                   <Link component={Link} style={{display:'flex'}} to={"/cart"}>
-                    <Icon icon="fontisto:shopping-basket" width="24" height="24" color="#FFFFFF" />
+                    <Icon className="hoverVerdeClaro-desktop" icon="fontisto:shopping-basket" width="24" height="24" color="#FFFFFF" />
                   </Link>
                 </div>
                 <div style={{ marginLeft: "1.5rem" }}>
                   {user && user.email ? (
                     <>
                       <Link onClick={() => setListOpen(!listOpen)} >
-                        <Typography variant="h4" sx={{ fontSize: "1rem" }}>Perfil</Typography>
+                        <Typography variant="h4" className="hoverVerdeClaro-desktop" sx={{ fontSize: "1rem" }}>Perfil</Typography>
                       </Link>
                     </>
                   ) : (
                     <Link component={Link} to={"/Login"} >
-                      <Typography variant="h4" sx={{ fontSize: "1rem" }}>Iniciar sesión</Typography>
+                      <Typography variant="h4" className="hoverVerdeClaro-desktop" sx={{ fontSize: "1rem" }}>Iniciar sesión</Typography>
                     </Link>
                   )}
                 </div>

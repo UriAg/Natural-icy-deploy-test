@@ -120,7 +120,7 @@ const Register = () => {
           <img src={`${import.meta.env.VITE_BASE_URL}/assets/natural.png`} alt="Nombre del emprendimiento: Natural" />
           <Typography variant="h2" className="subtitulo">¡Rellena los campos para obtener tu nueva contraseña!</Typography>
           <form onSubmit={handleSubmit}>
-            <div>
+            <div className="box-container">
               <div className="textContainer">
                 <FormControl variant="outlined" className="textField">
                   <Typography variant="h4Custom">Contraseña:</Typography>
@@ -187,22 +187,22 @@ const Register = () => {
                   />
                 </FormControl>
               </div>
-              <div>
+              <div className="textContainerRow-container">
                 <div>
                   <Button variant="contained" type="submit" className="button">
                     <Typography variant="h4">Modificar contraseña</Typography>
                   </Button>
                 </div>
-                <div className="textContainerRow">
-                  <Typography variant="h5" onClick={() => navigate("/")} sx={{ textTransform: "none", cursor: "pointer", color: "#164439", fontWeight: "500" }}>Regresar</Typography>
+                <div className="textContainerRow" style={{display:'flex', justifyContent:'center'}}>
+                  <Typography variant="h5" className="redirect-link" onClick={() => navigate("/")} sx={{ textTransform: "none", cursor: "pointer", color: "#164439", fontWeight: "500", textAlign:'center' }}>Regresar</Typography>
                 </div>
-                <Link to="/" style={{ textAlign:'center'}}>
-                  <Typography variant="h5" sx={{
+                <Link to="/" className="textContainerRow" style={{ textAlign:'center'}}>
+                  <Typography variant="h5" className="redirect-link" sx={{
                       textTransform: "none",
                       cursor: "pointer",
                       color: "#164439",
-                      marginTop:'.7em',
                       fontWeight: "500",
+                      
                     }}
                   >
                     Volver al inicio

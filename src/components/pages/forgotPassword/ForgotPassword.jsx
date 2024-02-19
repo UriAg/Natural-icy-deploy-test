@@ -29,7 +29,7 @@ const ForgotPassword = () => {
         const result = await validationSchema.validate(values, { abortEarly: false });
 
         const url = 'https://naturalicy-back-production.up.railway.app/api/sessions/forgotPassword';
-        const data = { email: result.email };
+        const data = { email: result.email.toLowerCase() };
 
         let fetchOptions = {
           headers: {
@@ -74,7 +74,7 @@ const ForgotPassword = () => {
           <img src={`${import.meta.env.VITE_BASE_URL}/assets/natural.png`} alt="Nombre del emprendimiento: Natural" />
           <Typography variant="h2" className="subtitulo">¿Olvidaste tu contraseña?</Typography>
           <form onSubmit={handleSubmit}>
-            <div>
+            <div className="textContainerRow-container">
               <div style={{ marginBottom: "1.25rem" }} className="textContainer" >
                 <Typography variant="h4Custom">Email:</Typography>
                 <TextField name="email" placeholder="Ejem:Tunombre@gmail.com" className="textField" onChange={handleChange} value={values.email} error={touched.email && errors.email?true:false} helperText={errors.email?errors.email:''} />
@@ -85,14 +85,13 @@ const ForgotPassword = () => {
                 </Button>
               </div>
               <div className="textContainerRow">
-                <Typography variant="h5" onClick={() => navigate("/login")} sx={{ textTransform: "none", cursor: "pointer", color: "#164439", fontWeight: "500" }}>Regresar</Typography>
+                <Typography variant="h5" className="redirect-link" onClick={() => navigate("/login")} sx={{ textTransform: "none", cursor: "pointer", color: "#164439", fontWeight: "500" }}>Regresar</Typography>
               </div>
-              <Link to="/" style={{ textAlign:'center'}}>
-                  <Typography variant="h5" sx={{
+              <Link to="/" className="textContainerRow" style={{ textAlign:'center'}}>
+                  <Typography variant="h5" className="redirect-link" sx={{
                       textTransform: "none",
                       cursor: "pointer",
                       color: "#164439",
-                      marginTop:'.7em',
                       fontWeight: "500",
                     }}
                   >

@@ -24,6 +24,34 @@
     transform: scale(1.2);
 }
 
+.hoverVerdeClaro-desktop {
+    transition: all .2s ease;
+    display: inline-block;
+    font-weight: 700;
+}
+
+.hoverVerdeClaro-desktop:hover {
+    color: #41A88A!important;
+    font-weight: bold;
+    transform: scale(1.1);
+}
+
+.boxContainer .box .box-container .textContainerRow-container,
+.textContainerRow-container{
+    .textContainerRow {
+        display: flex;
+        flex-direction: row;
+        margin-top: 0.625rem;
+        justify-content: center;
+        .redirect-link:hover{
+            color: #357d6c;
+        }
+    }
+    .redirect-link:hover{
+        color: #357d6c;
+    }
+}
+
 /* === Hover: Footer */
 
 .soporte {
@@ -31,12 +59,22 @@
         .itemBox {
             padding: 1px;
             .item:hover {
-                    color: #FFFF66;
-                    font-weight: 500;
-                }
+                color: #FFFF66;
+                font-weight: 500;
+            }
         }
     }
 }
+// .redes{
+//     .red-social{
+//         .social_media-icon{
+//             &:hover {
+//                 fill: #FFFF66!important;
+//                 font-weight: 500;
+//             }
+//         }
+//     }
+// }
 
 .secciones {
     .itemsContainer {

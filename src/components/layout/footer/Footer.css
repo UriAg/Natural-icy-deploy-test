@@ -67,6 +67,11 @@
     grid-area: redes;
 }
 
+.redes .red-social .social_media-icon:hover{
+    color: #FFFF66!important;
+    font-weight: 500;
+}
+
 .equipo {
     grid-area: equipo;
     margin-top: 2rem;

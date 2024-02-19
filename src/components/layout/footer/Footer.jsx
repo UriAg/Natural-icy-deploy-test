@@ -73,10 +73,10 @@ const Footer = () => {
                 </div>
                 <div className="redes" style={{textAlign:'center'}}>
                     <Typography variant="h4">Seguinos en nuestras redes</Typography>
-                    <div className="red-social" style={{display:'flex', justifyContent:'space-around', marginTop:'.4em'}}>
-                        <a href="https://www.instagram.com/natural.icy.market/" className="fa fa-instagram"><FaInstagram style={{color:'#FFF', width:'1.7em', height:'1.7em'}}/></a>
-                        <a href="#" className="fa fa-twitter"> <FaTwitter style={{color:'#FFF', width:'1.7em', height:'1.7em'}}/></a>
-                        <a href="#" className="fa fa-facebook"><FaFacebookSquare style={{color:'#FFF', width:'1.7em', height:'1.7em'}}/></a>
+                    <div className="red-social" style={{display:'flex', justifyContent:'space-evenly', marginTop:'1em'}}>
+                        <a href="https://www.instagram.com/natural.icy.market/" className="fa fa-instagram"><FaInstagram className="social_media-icon" style={{color:'#FFF', width:'1.7em', height:'1.7em'}}/></a>
+                        <a href="#" className="fa fa-twitter"> <FaTwitter className="social_media-icon" style={{color:'#FFF', width:'1.7em', height:'1.7em'}}/></a>
+                        <a href="#" className="fa fa-facebook"><FaFacebookSquare className="social_media-icon" style={{color:'#FFF', width:'1.7em', height:'1.7em'}}/></a>
                     </div>
                 </div>
                 <div className="equipo">

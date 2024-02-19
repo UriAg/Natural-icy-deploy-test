@@ -39,7 +39,7 @@ const Login = () => {
 
 
         const url = 'https://naturalicy-back-production.up.railway.app/api/sessions/login';
-        const data = { email: result.email, password:result.password };
+        const data = { email: result.email.toLowerCase(), password:result.password };
 
         let fetchOptions = {
           headers: {
@@ -158,7 +158,7 @@ const Login = () => {
                     <Typography variant="h4">Iniciar sesión</Typography>
                   </Button>
                 </div>
-                <div>
+                <div className="textContainerRow-container">
                   <div className="textContainerRow">
                     <Typography
                       variant="h5"
@@ -171,6 +171,7 @@ const Login = () => {
                     <Typography
                       variant="h5"
                       onClick={() => navigate("/register")}
+                      className="redirect-link"
                       sx={{
                         textTransform: "none",
                         cursor: "pointer",
@@ -181,8 +182,8 @@ const Login = () => {
                       Crear cuenta
                     </Typography>
                   </div>
-                    <Link to="/forgot-password" style={{ textAlign:'center'}}>
-                      <Typography variant="h5" onClick={() => navigate("/register")} sx={{
+                    <Link to="/forgot-password" className="redirect-link-container" style={{ textAlign:'center'}}>
+                      <Typography variant="h5" className="redirect-link" onClick={() => navigate("/register")} sx={{
                         textTransform: "none",
                         cursor: "pointer",
                         color: "#164439",
@@ -193,8 +194,8 @@ const Login = () => {
                       ¿Olvidaste tu contraseña?
                     </Typography>
                     </Link>
-                    <Link to="/" style={{ textAlign:'center'}}>
-                      <Typography variant="h5" sx={{
+                    <Link to="/" className="redirect-link-container" style={{ textAlign:'center'}}>
+                      <Typography variant="h5" className="redirect-link" sx={{
                         textTransform: "none",
                         cursor: "pointer",
                         color: "#164439",

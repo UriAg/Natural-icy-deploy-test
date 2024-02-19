@@ -45,9 +45,9 @@ function NavList({ setListOpen }) {
                             </Link>
                         </ListItem>
                         <ListItem >
-                            <Link onClick={handleLogout}>
+                            <div style={{cursor:'pointer'}} onClick={()=>handleLogout()}>
                                 <Typography variant="drawer" className="hoverVerdeClaro">Cerrar sesión</Typography>
-                            </Link>
+                            </div>
                         </ListItem>
                     </List>
                 ) : user && user.rol === rolAdmin ? (
@@ -64,9 +64,9 @@ function NavList({ setListOpen }) {
                                 </Link>
                             </ListItem>
                             <ListItem >
-                                <Link onClick={handleLogout}>
+                                <div style={{cursor:'pointer'}} onClick={()=>handleLogout()}>
                                         <Typography variant="drawer" className="hoverVerdeClaro">Cerrar sesión</Typography>
-                                </Link>
+                                </div>
                             </ListItem>
                         </List>
                     </>
