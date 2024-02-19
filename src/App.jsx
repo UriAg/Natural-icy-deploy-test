@@ -7,8 +7,6 @@ import { useEffect } from "react";
 
 function App() {
 
-  const navigate = useNavigate()
-
   function validateTokenDate() {
       let userTokenAccess = localStorage.getItem('userTokenAccess');
       if (userTokenAccess) {
@@ -18,7 +16,7 @@ function App() {
               if (now > parseInt(expirationLoginDate)) {
                 localStorage.removeItem('userTokenAccess');
                 localStorage.removeItem('expirationLoginDate');
-                navigate('/')
+                window.location.href = '/';
               }
           }
       }
@@ -27,7 +25,7 @@ function App() {
   useEffect(()=>{
     validateTokenDate()
   }, [])
-  
+
   return (
     <BrowserRouter>
       <CartContextComponent>
