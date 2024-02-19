@@ -7,24 +7,33 @@ import { useEffect } from "react";
 
 function App() {
 
-  function validateTokenDate() {
+  useEffect(() => {
+    function validateTokenDate() {
       let userTokenAccess = localStorage.getItem('userTokenAccess');
       if (userTokenAccess) {
-          const expirationLoginDate = localStorage.getItem('expirationLoginDate');
-          if (expirationLoginDate) {
-              const now = new Date().getTime();
-              if (now > parseInt(expirationLoginDate)) {
-                localStorage.removeItem('userTokenAccess');
-                localStorage.removeItem('expirationLoginDate');
-                window.location.href = '/';
-              }
+        const expirationLoginDate = localStorage.getItem('expirationLoginDate');
+        if (expirationLoginDate) {
+          const now = new Date().getTime();
+          if (now > parseInt(expirationLoginDate)) {
+            localStorage.removeItem('userTokenAccess');
+            localStorage.removeItem('userInfo');
+            localStorage.removeItem('isLogged');
+            localStorage.removeItem('expirationLoginDate');
+            window.location.href = '/';
           }
+        }
       }
-  }
+    }
 
-  useEffect(()=>{
-    validateTokenDate()
-  }, [])
+    validateTokenDate();
+
+    const unlisten = window.addEventListener('popstate', validateTokenDate);
+
+    return () => {
+      window.removeEventListener('popstate', validateTokenDate);
+      unlisten();
+    };
+  }, []);
 
   return (
     <BrowserRouter>
