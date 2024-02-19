@@ -17,8 +17,7 @@ const AuthContextComponent = ({ children }) => {
     localStorage.setItem("userInfo", JSON.stringify({ email: userLogged.email, rol: userLogged.rol }));
     localStorage.setItem("isLogged", JSON.stringify(true));
     const now = new Date().getTime();
-    // const expiration = now + (24 * 60 * 60 * 1000);
-    const expiration = now + (60 * 1000);
+    const expiration = now + (24 * 60 * 60 * 1000);
     localStorage.setItem('expirationLoginDate', expiration)
   };
 
