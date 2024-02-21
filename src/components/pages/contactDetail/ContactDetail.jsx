@@ -11,11 +11,10 @@ import { toast, ToastContainer } from "react-toastify";
 
 const ContactDetail = () => {
 
-
     const [isHomeDelivery, setIsHomeDelivery] = useState(true);
+    const navigate = useNavigate();
 
-
-    const formik = useFormik({
+    const { handleSubmit,handleBlur, handleChange, values, errors, touched, setErrors } = useFormik({
         initialValues: {
             name: "",
             last_name: "",
@@ -28,73 +27,92 @@ const ContactDetail = () => {
             zip_code: "",
             aditional_info: "",
         },
-        validationSchema: Yup.object({
-            name: Yup.string()
-                .required('*Campo requerido')
-                .matches(/^[A-Za-záéíóúÁÉÍÓÚñÑüÜ\s']+$/, 'No debe contener números, símbolos'),
-            last_name: Yup.string()
-                .required('*Campo requerido')
-                .matches(/^[A-Za-záéíóúÁÉÍÓÚñÑüÜ\s']+$/, 'No debe contener números, símbolos'),
-            email: Yup.string()
-                .email('Email no válido')
-                .required('*Campo requerido'),
-            area_code: Yup.string()
-            .required('*Campo requerido')
-            .matches(/^[0-9]+$/, 'Solo se permiten números')
-            .max(4, 'Debe contener máximo 4 números'),
-            phone: Yup.string()
-                .required('*Campo requerido')
-                .matches(/^[0-9]+$/, 'Solo se permiten números')
-                .max(10, 'Debe contener máximo 10 números'),
-            street_name: Yup.string()
-                .required('*Campo requerido')
-                .matches(/^[a-zA-Z0-9\s]+$/, 'Solo se permiten letras y números'),
-            street_number: Yup.string()
-                .required('*Campo requerido')
-                .matches(/^[0-9]+$/, 'Solo se permiten números'),
-            apartment: Yup.string()
-                .matches(/^[a-zA-Z0-9\s]+$/, 'Solo se permiten letras y números'),
-            zip_code: Yup.string()
-                .required('*Campo requerido')
-                .matches(/^[0-9]+$/, 'Solo se permiten números')
-                .length(4, 'Debe contener 4 números'),
-        }),
-        onSubmit: values => {
-            handleBuy(values);
+        onSubmit: async (values) => {
+            const isHomeDeliverySelected = isHomeDelivery;
+        
+            try{
+                if(isHomeDeliverySelected){
+                    const validationSchema = Yup.object({
+                        name: Yup.string()
+                            .required('*Campo requerido')
+                            .matches(/^[A-Za-záéíóúÁÉÍÓÚñÑüÜ\s']+$/, 'No debe contener números, símbolos'),
+                        last_name: Yup.string()
+                            .required('*Campo requerido')
+                            .matches(/^[A-Za-záéíóúÁÉÍÓÚñÑüÜ\s']+$/, 'No debe contener números, símbolos'),
+                        email: Yup.string()
+                            .email('Email no válido')
+                            .required('*Campo requerido'),
+                        area_code: Yup.string()
+                            .required('*Campo requerido')
+                            .matches(/^[0-9]+$/, 'Solo se permiten números')
+                            .max(4, 'Debe contener máximo 4 números'),
+                        phone: Yup.string()
+                            .required('*Campo requerido')
+                            .matches(/^[0-9]+$/, 'Solo se permiten números')
+                            .max(10, 'Debe contener máximo 10 números'),
+                        street_name: Yup.string()
+                            .required('*Campo requerido')
+                            .matches(/^[a-zA-Z0-9\s]+$/, 'Solo se permiten letras y números'),
+                        street_number: Yup.string()
+                            .required('*Campo requerido')
+                            .matches(/^[0-9]+$/, 'Solo se permiten números'),
+                        zip_code: Yup.string()
+                            .required('*Campo requerido')
+                            .matches(/^[0-9]+$/, 'Solo se permiten números')
+                            .length(4, 'Debe contener 4 números'),
+                    })
+
+                    const result = await validationSchema.validate(values, { abortEarly: false });
+     
+                    let order = {
+                        ...result,
+                    };
+                    localStorage.setItem("order", JSON.stringify(order));
+                    navigate("/checkout");
+                }else{
+                    const validationSchema = Yup.object({
+                        name: Yup.string()
+                            .required('*Campo requerido')
+                            .matches(/^[A-Za-záéíóúÁÉÍÓÚñÑüÜ\s']+$/, 'No debe contener números, símbolos'),
+                        last_name: Yup.string()
+                            .required('*Campo requerido')
+                            .matches(/^[A-Za-záéíóúÁÉÍÓÚñÑüÜ\s']+$/, 'No debe contener números, símbolos'),
+                        email: Yup.string()
+                            .email('Email no válido')
+                            .required('*Campo requerido'),
+                        area_code: Yup.string()
+                            .required('*Campo requerido')
+                            .matches(/^[0-9]+$/, 'Solo se permiten números')
+                            .max(4, 'Debe contener máximo 4 números'),
+                        phone: Yup.string()
+                            .required('*Campo requerido')
+                            .matches(/^[0-9]+$/, 'Solo se permiten números')
+                            .max(10, 'Debe contener máximo 10 números'),
+                    })
+
+                    const result = await validationSchema.validate(values, { abortEarly: false });
+                   
+                    let order = {
+                        ...result,
+                    };
+                    localStorage.setItem("order", JSON.stringify(order));
+                    navigate("/checkout");
+                }
+            } catch (error) {
+                toast.warn(`Todos los campos deben ser rellenados correctamente`, {
+                    position: "top-center",
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    autoClose: false,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    });
+                return;
+            }
         },
     });
-
-    const navigate = useNavigate();
-
-    const handleBuy = () => {
-        const isHomeDeliverySelected = isHomeDelivery;
-        if (
-            (isHomeDeliverySelected && formik.isValid) ||
-            (!isHomeDeliverySelected && (formik.values.name && formik.values.last_name && formik.values.email && formik.values.phone))
-        ) {
-            let order = {
-                ...formik.values,
-            };
-            localStorage.setItem("order", JSON.stringify(order));
-            navigate("/checkout");
-        } else {
-            toast.warn(`Todos los campos deben ser rellenados correctamente`, {
-                position: "top-center",
-                hideProgressBar: false,
-                closeOnClick: true,
-                autoClose: false,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "light",
-                });
-            return;
-        }
-    };
-
-
-
-
 
     return (
         <div className="contactDetail">
@@ -119,10 +137,10 @@ const ContactDetail = () => {
                                     name="name"
                                     className="textField"
 
-                                    onChange={formik.handleChange}
-                                    onBlur={formik.handleBlur}
-                                    value={formik.values.name}
-                                    helperText={formik.touched.name && formik.errors.name ? formik.errors.name : ''} />
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.name}
+                                    helperText={touched.name && errors.name ? errors.name : ''} />
 
                             </div>
                             <div style={{ marginBottom: "1.25rem" }} className="textContainer">
@@ -131,10 +149,10 @@ const ContactDetail = () => {
                                     name="last_name"
                                     className="textField"
 
-                                    onChange={formik.handleChange}
-                                    onBlur={formik.handleBlur}
-                                    value={formik.values.last_name}
-                                    helperText={formik.touched.last_name && formik.errors.last_name ? formik.errors.last_name : ''} />
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.last_name}
+                                    helperText={touched.last_name && errors.last_name ? errors.last_name : ''} />
                             </div>
                             <div style={{ marginBottom: "0.625rem" }} className="textContainer" >
                                 <Typography variant="h4Custom">Email:</Typography>
@@ -143,10 +161,10 @@ const ContactDetail = () => {
                                     placeholder="Ejem:Tunombre@gmail.com"
                                     className="textField"
 
-                                    onChange={formik.handleChange}
-                                    onBlur={formik.handleBlur}
-                                    value={formik.values.email}
-                                    helperText={formik.touched.email && formik.errors.email ? formik.errors.email : ''} />
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.email}
+                                    helperText={touched.email && errors.email ? errors.email : ''} />
                             </div>
                             <div style={{ marginBottom: "1.25rem", display:'flex', flexDirection:'row' }} className="textContainer" >
                                 <div className="area_code-container">
@@ -154,10 +172,10 @@ const ContactDetail = () => {
                                     <TextField
                                     name="area_code"
                                     className="textField"
-                                    onChange={formik.handleChange}
-                                    onBlur={formik.handleBlur}
-                                    value={formik.values.area_code}
-                                    helperText={formik.touched.area_code && formik.errors.area_code ? formik.errors.area_code : ''} />
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.area_code}
+                                    helperText={touched.area_code && errors.area_code ? errors.area_code : ''} />
                                 </div>
 
                                 <div className="phone_number-container">
@@ -165,10 +183,10 @@ const ContactDetail = () => {
                                     <TextField
                                         name="phone"
                                         className="textField"
-                                        onChange={formik.handleChange}
-                                        onBlur={formik.handleBlur}
-                                        value={formik.values.phone}
-                                        helperText={formik.touched.phone && formik.errors.phone ? formik.errors.phone : ''} />
+                                        onChange={handleChange}
+                                        onBlur={handleBlur}
+                                        value={values.phone}
+                                        helperText={touched.phone && errors.phone ? errors.phone : ''} />
                                 </div>
                             </div>
                         </div>
@@ -201,10 +219,10 @@ const ContactDetail = () => {
                                     name="street_name"
                                     className="textField"
 
-                                    onChange={formik.handleChange}
-                                    onBlur={formik.handleBlur}
-                                    value={formik.values.street_name}
-                                    helperText={formik.touched.street_name && formik.errors.street_name ? formik.errors.street_name : ''} />
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.street_name}
+                                    helperText={touched.street_name && errors.street_name ? errors.street_name : ''} />
                             </div>
                             <div style={{ marginBottom: "1.25rem" }} className="textContainer" >
                                 <Typography variant="h4Custom">Número de casa:</Typography>
@@ -212,10 +230,10 @@ const ContactDetail = () => {
                                     name="street_number"
                                     className="textField"
 
-                                    onChange={formik.handleChange}
-                                    onBlur={formik.handleBlur}
-                                    value={formik.values.street_number}
-                                    helperText={formik.touched.street_number && formik.errors.street_number ? formik.errors.street_number : ''} />
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.street_number}
+                                    helperText={touched.street_number && errors.street_number ? errors.street_number : ''} />
                             </div>
                             <div style={{ marginBottom: "1.25rem" }} className="textContainer" >
                                 <Typography variant="h4Custom">Departamento (opcional):</Typography>
@@ -223,20 +241,20 @@ const ContactDetail = () => {
                                     name="apartment"
                                     className="textField"
 
-                                    onChange={formik.handleChange}
-                                    onBlur={formik.handleBlur}
-                                    value={formik.values.apartment}
-                                    helperText={formik.touched.apartment && formik.errors.apartment ? formik.errors.apartment : ''} />
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.apartment}
+                                    helperText={touched.apartment && errors.apartment ? errors.apartment : ''} />
                             </div>
                             <div style={{ marginBottom: "1.25rem" }} className="textContainer" >
                                 <Typography variant="h4Custom">Código postal:</Typography>
                                 <TextField
                                     name="zip_code"
                                     className="textField"
-                                    onChange={formik.handleChange}
-                                    onBlur={formik.handleBlur}
-                                    value={formik.values.zip_code}
-                                    helperText={formik.touched.zip_code && formik.errors.zip_code ? formik.errors.zip_code : ''} />
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.zip_code}
+                                    helperText={touched.zip_code && errors.zip_code ? errors.zip_code : ''} />
                             </div>
                             <div style={{ marginBottom: "1.25rem" }} className="textContainer" >
                                 <Typography variant="h4Custom">Observaciones (opcional):</Typography>
@@ -244,10 +262,10 @@ const ContactDetail = () => {
                                     name="aditional_info"
                                     className="textField"
 
-                                    onChange={formik.handleChange}
-                                    onBlur={formik.handleBlur}
-                                    value={formik.values.aditional_info}
-                                    helperText={formik.touched.aditional_info && formik.errors.aditional_info ? formik.errors.aditional_info : ''} />
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.aditional_info}
+                                    helperText={touched.aditional_info && errors.aditional_info ? errors.aditional_info : ''} />
                             </div>
                         </div>
 
@@ -259,7 +277,7 @@ const ContactDetail = () => {
                         <Link to="/cart" className="linksOptions">
                             <Typography variant="stock" style={{ color: '#164439'}}><Icon icon="grommet-icons:next" transform="rotate(180)"/>Seguir comprando</Typography> 
                         </Link>
-                        <Typography variant="stock" onClick={handleBuy} className="linksOptions-btn" style={{ color: '#164439' }}>Siguiente paso <Icon icon="grommet-icons:next"/></Typography>
+                        <Typography variant="stock" onClick={handleSubmit} className="linksOptions-btn" style={{ color: '#164439' }}>Siguiente paso <Icon icon="grommet-icons:next"/></Typography>
 
                     </div>
                 </div>
